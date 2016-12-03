@@ -148,6 +148,14 @@ public class Haiku {
         while ( (generatedLine[0] == null) && (variableA == 0 || variableA == syllables || variableA == syllables - 1)) {
             variableA = variableRandom.nextInt((syllables - 1));          
             
+          if (a.equals("article")) {
+              variableA = 1; 
+              if (variableA == 1) {
+                  int indexReference = variableRandom.nextInt(aOneList.size());
+                  generatedLine[0] = aOneList.get(indexReference);
+              }
+          }
+          else {
             if (variableA == 5) {
                 int indexReference = variableRandom.nextInt(aFiveList.size());
                 generatedLine[0] = aFiveList.get(indexReference);
@@ -168,6 +176,7 @@ public class Haiku {
                 int indexReference = variableRandom.nextInt(aOneList.size());
                 generatedLine[0] = aOneList.get(indexReference);
             }
+          }
         }
         
         //Get word of type B
