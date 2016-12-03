@@ -2,6 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Menu {
     public static void printMenu() {
+        System.out.println("");
         System.out.println("1. Load a dictionary");
         System.out.println("2. Generate a Haiku");
         System.out.println("3. Save the previous Haiku");

@@ -30,6 +30,7 @@ public class HaikuGenerator {
                     Menu.invalidOption();
                 }
                 switch (userInput) {
+                
                 case 1:
                     System.out.println("Please type in directory of your Haiku dictionary");
                     System.out.println("Default: HaikuDictionary");
@@ -39,12 +40,18 @@ public class HaikuGenerator {
                        System.out.println("Dictionary sucessfully loaded"); 
                     }
                     else {
-                        System.out.println("Please enter a dictionary that exists");
                         while(!dictionary.exists()) {
+                            System.out.println("Please enter a dictionary that exists");
                             dictionaryDirectory = in.next();
-                            dictionary = new File(dictionaryDirectory);
+                            dictionary = new File(dictionaryDirectory +".txt");
+                            
+                            if(dictionary.exists()) {
+                                System.out.println("Dictionary sucessfully loaded"); 
+                            }
                         }
+                        
                     }
+                    Menu.printMenu();
                     break;
                     
                 case 2:
@@ -60,14 +67,15 @@ public class HaikuGenerator {
                     else
                         System.out.println("Please load a dictionary before making a haiku");
                     
+                    Menu.printMenu();
                     break;
                     
                 case 3:
                     System.out.println("Name the Haiku file generated");
-                    File HaikuExport =  new File(in.next());
+                    String filePath = in.next()+ ".txt";
                     PrintWriter HaikuWrite = null;
                     try {
-                        HaikuWrite = new PrintWriter(HaikuExport);
+                        HaikuWrite = new PrintWriter(filePath);
                     } 
                     catch (FileNotFoundException e) {
                     }
@@ -75,9 +83,13 @@ public class HaikuGenerator {
                         HaikuWrite.println(generated.getLineOne());
                         HaikuWrite.println(generated.getLineTwo());
                         HaikuWrite.println(generated.getLineThree());
+                        HaikuWrite.close();
+                        System.out.println("Haiku saved!");
                     }
                     else
                         System.out.println("Please generate a haiku before trying to save one!");
+                    
+                    Menu.printMenu();
                     break;
                     
                 case 4:

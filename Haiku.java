@@ -21,7 +21,6 @@ public class Haiku {
             String syllables = HaikuReader.next();
             String determiner = HaikuReader.next();
             String[] dictionaryEntry = new String[3];
-            System.out.println(word);
             dictionaryEntry[0] = word ;
             dictionaryEntry[1] = syllables;
             dictionaryEntry[2] = determiner;
@@ -86,55 +85,55 @@ public class Haiku {
 
         for(int i = 0; i < dictionary.size(); i++) {
             if (dictionary.get(i)[2].equals(a)) {
-                if (dictionary.get(i)[1].equals(1)) {
+                if (dictionary.get(i)[1].equals("1")) {
                     aOneList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(2)) {
+                if (dictionary.get(i)[1].equals("2")) {
                     aTwoList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(3)) {
+                if (dictionary.get(i)[1].equals("3")) {
                     aThreeList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(4)) {
+                if (dictionary.get(i)[1].equals("4")) {
                     aFourList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(5)) {
+                if (dictionary.get(i)[1].equals("5")) {
                     aFiveList.add(dictionary.get(i)[0]);
                 }
 
             }
             if (dictionary.get(i)[2].equals(b)) {
-                if (dictionary.get(i)[1].equals(1)) {
+                if (dictionary.get(i)[1].equals("1")) {
                     bOneList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(2)) {
+                if (dictionary.get(i)[1].equals("2")) {
                     bTwoList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(3)) {
+                if (dictionary.get(i)[1].equals("3")) {
                     bThreeList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(4)) {
+                if (dictionary.get(i)[1].equals("4")) {
                     bFourList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(5)) {
+                if (dictionary.get(i)[1].equals("5")) {
                     bFiveList.add(dictionary.get(i)[0]);
                 }
 
             }
             if (dictionary.get(i)[2].equals(c)) {
-                if (dictionary.get(i)[1].equals(1)) {
+                if (dictionary.get(i)[1].equals("1")) {
                     cOneList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(2)) {
+                if (dictionary.get(i)[1].equals("2")) {
                     cTwoList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(3)) {
+                if (dictionary.get(i)[1].equals("3")) {
                     cThreeList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(4)) {
+                if (dictionary.get(i)[1].equals("4")) {
                     cFourList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(5)) {
+                if (dictionary.get(i)[1].equals("5")) {
                     cFiveList.add(dictionary.get(i)[0]);
                 }
 
@@ -147,26 +146,26 @@ public class Haiku {
         
         //Get word of type A 
         while ( (generatedLine[0] == null) && (variableA == 0 || variableA == syllables || variableA == syllables - 1)) {
-            variableA = variableRandom.nextInt((variableRandom.nextInt(syllables + 1) - variableRandom.nextInt(syllables - 1)));          
+            variableA = variableRandom.nextInt((syllables - 1));          
             
             if (variableA == 5) {
-                int indexReference = variableRandom.nextInt(aFiveList.size() + 1);
+                int indexReference = variableRandom.nextInt(aFiveList.size());
                 generatedLine[0] = aFiveList.get(indexReference);
             }
             if (variableA == 4) {
-                int indexReference = variableRandom.nextInt(aFourList.size() + 1);
+                int indexReference = variableRandom.nextInt(aFourList.size());
                 generatedLine[0] = aFourList.get(indexReference);
             }
             if (variableA == 3) {
-                int indexReference = variableRandom.nextInt(aThreeList.size() + 1);        
+                int indexReference = variableRandom.nextInt(aThreeList.size());        
                 generatedLine[0] = aThreeList.get(indexReference);
             }
             if (variableA == 2) {
-                int indexReference = variableRandom.nextInt(aTwoList.size() + 1);
+                int indexReference = variableRandom.nextInt(aTwoList.size());
                 generatedLine[0] = aTwoList.get(indexReference);
             }
             if (variableA == 1) {
-                int indexReference = variableRandom.nextInt(aOneList.size() + 1);
+                int indexReference = variableRandom.nextInt(aOneList.size());
                 generatedLine[0] = aOneList.get(indexReference);
             }
         }
@@ -177,23 +176,23 @@ public class Haiku {
         }
         
         if (variableB == 5) {
-            int indexReference = variableRandom.nextInt(bFiveList.size() + 1);
+            int indexReference = variableRandom.nextInt(bFiveList.size());
             generatedLine[1] = bFiveList.get(indexReference);
         }
         if (variableB == 4) {
-            int indexReference = variableRandom.nextInt(bFourList.size() + 1);
+            int indexReference = variableRandom.nextInt(bFourList.size());
             generatedLine[1] = bFourList.get(indexReference);
         }
-        if (variableB == 3) {
-            int indexReference = variableRandom.nextInt(bThreeList.size() + 1);        
+        if      (variableB == 3) {
+            int indexReference = variableRandom.nextInt(bThreeList.size());        
             generatedLine[1] = bThreeList.get(indexReference);
         }
         if (variableB == 2) {
-            int indexReference = variableRandom.nextInt(bTwoList.size() + 1);
+            int indexReference = variableRandom.nextInt(bTwoList.size());
             generatedLine[1] = bTwoList.get(indexReference);
         }
         if (variableB == 1) {
-            int indexReference = variableRandom.nextInt(bOneList.size() + 1);
+            int indexReference = variableRandom.nextInt(bOneList.size());
             generatedLine[1] = bOneList.get(indexReference);
         }
         
@@ -201,23 +200,23 @@ public class Haiku {
         variableC = syllables - variableA - variableB;
         
         if (variableC == 5) {
-            int indexReference = variableRandom.nextInt(cFiveList.size() + 1);
+            int indexReference = variableRandom.nextInt(cFiveList.size());
             generatedLine[2] = cFiveList.get(indexReference);
         }
         if (variableC == 4) {
-            int indexReference = variableRandom.nextInt(cFourList.size() + 1);
+            int indexReference = variableRandom.nextInt(cFourList.size());
             generatedLine[2] = cFourList.get(indexReference);
         }
         if (variableC == 3) {
-            int indexReference = variableRandom.nextInt(cThreeList.size() + 1);        
+            int indexReference = variableRandom.nextInt(cThreeList.size());        
             generatedLine[2] = cThreeList.get(indexReference);
         }
         if (variableC == 2) {
-            int indexReference = variableRandom.nextInt(cTwoList.size() + 1);
+            int indexReference = variableRandom.nextInt(cTwoList.size());
             generatedLine[2] = cTwoList.get(indexReference);
         }
         if (variableC == 1) {
-            int indexReference = variableRandom.nextInt(cOneList.size() + 1);
+            int indexReference = variableRandom.nextInt(cOneList.size());
             generatedLine[2] = cOneList.get(indexReference);
         }
         
@@ -242,39 +241,40 @@ public class Haiku {
         ArrayList <String> aFiveList = new ArrayList<String>();
         ArrayList <String> bFiveList = new ArrayList<String>();
 
+
         for(int i = 0; i < dictionary.size(); i++) {
             if (dictionary.get(i)[2].equals(a)) {
-                if (dictionary.get(i)[1].equals(1)) {
+                if (dictionary.get(i)[1].equals("1")) {
                     aOneList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(2)) {
+                if (dictionary.get(i)[1].equals("2")) {
                     aTwoList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(3)) {
+                if (dictionary.get(i)[1].equals("3")) {
                     aThreeList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(4)) {
+                if (dictionary.get(i)[1].equals("4")) {
                     aFourList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(5)) {
+                if (dictionary.get(i)[1].equals("5")) {
                     aFiveList.add(dictionary.get(i)[0]);
                 }
 
             }
             if (dictionary.get(i)[2].equals(b)) {
-                if (dictionary.get(i)[1].equals(1)) {
+                if (dictionary.get(i)[1].equals("1")) {
                     bOneList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(2)) {
+                if (dictionary.get(i)[1].equals("2")) {
                     bTwoList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(3)) {
+                if (dictionary.get(i)[1].equals("3")) {
                     bThreeList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(4)) {
+                if (dictionary.get(i)[1].equals("4")) {
                     bFourList.add(dictionary.get(i)[0]);
                 }
-                if (dictionary.get(i)[1].equals(5)) {
+                if (dictionary.get(i)[1].equals("5")) {
                     bFiveList.add(dictionary.get(i)[0]);
                 }
 
@@ -290,23 +290,23 @@ public class Haiku {
             variableA = variableRandom.nextInt(syllables-1);
             
             if (variableA == 5) {
-                int indexReference = variableRandom.nextInt(aFiveList.size() + 1);
+                int indexReference = variableRandom.nextInt(aFiveList.size());
                 generatedLine[0] = aFiveList.get(indexReference);
             }
             if (variableA == 4) {
-                int indexReference = variableRandom.nextInt(aFourList.size() + 1);
+                int indexReference = variableRandom.nextInt(aFourList.size());
                 generatedLine[0] = aFourList.get(indexReference);
             }
             if (variableA == 3) {
-                int indexReference = variableRandom.nextInt(aThreeList.size() + 1);        
+                int indexReference = variableRandom.nextInt(aThreeList.size());        
                 generatedLine[0] = aThreeList.get(indexReference);
             }
             if (variableA == 2) {
-                int indexReference = variableRandom.nextInt(aTwoList.size() + 1);
+                int indexReference = variableRandom.nextInt(aTwoList.size());
                 generatedLine[0] = aTwoList.get(indexReference);
             }
             if (variableA == 1) {
-                int indexReference = variableRandom.nextInt(aOneList.size() + 1);
+                int indexReference = variableRandom.nextInt(aOneList.size());
                 generatedLine[0] = aOneList.get(indexReference);
             }
         }
@@ -316,23 +316,23 @@ public class Haiku {
             
             
             if (variableB == 5) {
-                int indexReference = variableRandom.nextInt(bFiveList.size() + 1);
+                int indexReference = variableRandom.nextInt(bFiveList.size());
                 generatedLine[1] = bFiveList.get(indexReference);
             }
             if (variableB == 4) {
-                int indexReference = variableRandom.nextInt(bFourList.size() + 1);
+                int indexReference = variableRandom.nextInt(bFourList.size());
                 generatedLine[1] = bFourList.get(indexReference);
             }
             if (variableB == 3) {
-                int indexReference = variableRandom.nextInt(bThreeList.size() + 1);        
+                int indexReference = variableRandom.nextInt(bThreeList.size());        
                 generatedLine[1] = bThreeList.get(indexReference);
             }
             if (variableB == 2) {
-                int indexReference = variableRandom.nextInt(bTwoList.size() + 1);
+                int indexReference = variableRandom.nextInt(bTwoList.size());
                 generatedLine[1] = bTwoList.get(indexReference);
             }
             if (variableB == 1) {
-                int indexReference = variableRandom.nextInt(bOneList.size() + 1);
+                int indexReference = variableRandom.nextInt(bOneList.size());
                 generatedLine[1] = bOneList.get(indexReference);
             }
         }
