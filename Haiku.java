@@ -21,11 +21,13 @@ public class Haiku {
             String syllables = HaikuReader.next();
             String determiner = HaikuReader.next();
             String[] dictionaryEntry = new String[3];
-            word = dictionaryEntry[0];
-            syllables = dictionaryEntry[1];
-            determiner = dictionaryEntry[2];
+            System.out.println(word);
+            dictionaryEntry[0] = word ;
+            dictionaryEntry[1] = syllables;
+            dictionaryEntry[2] = determiner;
             dictionaryList.add(dictionaryEntry);
         }
+        
         Random variableRandom = new Random();
         //Haiku Form 1
         //Line 1  article, noun 
@@ -285,7 +287,7 @@ public class Haiku {
         //Get word of type A 
         
         while ( (generatedLine[0] == null) && (variableA == 0 || variableA == syllables || variableA == syllables - 1)) {
-            variableA = variableRandom.nextInt((variableRandom.nextInt(syllables + 1) - variableRandom.nextInt(syllables - 1)));
+            variableA = variableRandom.nextInt(syllables-1);
             
             if (variableA == 5) {
                 int indexReference = variableRandom.nextInt(aFiveList.size() + 1);
